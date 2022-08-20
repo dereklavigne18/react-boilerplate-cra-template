@@ -1,0 +1,12 @@
+---
+version: "3.0"
+
+services:
+
+  build-app-repo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: ["yarn", "create", "react-app", "--template", "cra-template-rb"]
+    volumes:
+      - .:/app:rw
